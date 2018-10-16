@@ -34,7 +34,7 @@ values(gr) = mdt
 dTrack <- DataTrack(gr, name="depth",type = c('a','heatmap'))
 
 pdf(paste(output,'geneTrackDepth.pdf',sep=''))
-plotTracks(list(itr,gtr,dTrack,grtr),from=starter-2000,to=ender,showId=TRUE,showBandId=TRUE)
+plotTracks(list(itr,gtr,grtr,dTrack),from=starter-2000,to=ender,showId=TRUE,showBandId=TRUE)
 dev.off()
 
 

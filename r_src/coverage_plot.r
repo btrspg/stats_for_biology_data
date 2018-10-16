@@ -1,7 +1,7 @@
 args<-commandArgs(T)
 
 if(length(args) != 4){
-    print "Rscript coverage_plot.r <coverage.tsv> <names> <chr> <output.pdf>"
+    print("Rscript coverage_plot.r <coverage.tsv> <names> <chr> <output.pdf>")
     q()
 }
 

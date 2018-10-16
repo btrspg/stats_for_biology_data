@@ -85,6 +85,14 @@ def template_gc_length_pipeline(args):
     with pysam.AlignmentFile(args.align, 'rb') as align:
         get_gc_length_count(align, fasta, args.outdir,args.sample_n)
 
+# TODO: from bams to region plot
+def gene_plot_depth(args):
+    '''
+
+    :param args:
+    :return:
+    '''
+
 def main():
     pass
 

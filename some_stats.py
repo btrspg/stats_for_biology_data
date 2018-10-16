@@ -11,7 +11,7 @@ from __future__ import absolute_import, unicode_literals
 __author__ = 'Chen Yuelong'
 import argparse
 from commons.pipeline import stat_pipeline, template_gc_length_pipeline, divide_pipeline, \
-    pyecharts_3d_scatter_pipeline, cal_bed_gc
+    pyecharts_3d_scatter_pipeline, cal_bed_gc, gene_plot_depth
 
 
 def test(args):
@@ -72,6 +72,16 @@ def main():
     calgc_parser.add_argument('--output', dest='output', action='store', required=True,
                               help='output,结尾需要.csv,<required>')
     calgc_parser.set_defaults(func=cal_bed_gc)
+
+    gene_plot_parser = parser_sub.add_parser('depthOfGene', help='基因深度图')
+    gene_plot_parser.add_argument('--bams', dest='bams', action='store', required=True,
+                                  nargs='+',
+                                  help='bamfiles')
+    gene_plot_parser.add_argument('--region', dest='region', action='store', required=True,
+                                  help='region \'5:233-555\',<required>')
+    gene_plot_parser.add_argument('--outprefix', dest='output', action='store', required=True,
+                                  help='output,<required>')
+    gene_plot_parser.set_defaults(func=gene_plot_depth)
 
     args = parser.parse_args()
     try:
